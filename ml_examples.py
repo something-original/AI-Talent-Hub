@@ -57,7 +57,7 @@ people_tree1 = ensemble.RandomForestRegressor()
 rand_rf = RandomizedSearchCV(
     people_tree1, rs_space, n_iter= 50, scoring = 'neg_mean_absolute_error', n_jobs=-1, cv=5
 )
-model_rand_rf = rand_rf.fit(X, y)
+model_rand_rf = rand_rf.fit(X_train, y_train)
 best_params = model_rand_rf.best_params_
 
 
